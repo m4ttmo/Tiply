@@ -1,9 +1,5 @@
 <?php
 include('login.php'); // Includes Login Script
-
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="em">
@@ -28,7 +24,7 @@ header("location: profile.php");
         </nav>
       </div>
     </div>
-    <form action="" method="post">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
       <div class="row">
         <div class="col-lg-12">
           <h2>Log in</h2>
@@ -55,7 +51,6 @@ header("location: profile.php");
           <div class="btn-group btn-group-lg" role="group" aria-label="...">
             <button type="submit" class="btn btn-default" name="submit" value=" Login ">Continue</button>
           </div>
-            <span><?php echo $error; ?></span>
         </div>
       </div>
     </form>

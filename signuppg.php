@@ -1,6 +1,5 @@
 <?php
-include('validation.php'); // Includes Login Script
-
+include('register.php'); // Includes Login Script
 ?>
 <!DOCTYPE html>
 <html lang="em">
@@ -31,12 +30,13 @@ include('validation.php'); // Includes Login Script
         <h2>Sign up</h2>
       </div>
     </div>
-    <form action="validation.php" method="get">
-      <div class="row">
+    <form method='post' accept-charset='UTF-8' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+        
+        <div class="row">
         <div class="col-lg-12">
           <div class="input-group input-group-lg">
            <!-- <span class="input-group-addon" id="basic-addon1">@</span>-->
-            <input type="text" class="form-control" placeholder="e-mail" aria-describedby="basic-addon1" required>
+            <input type='text' name='name' id='name' maxlength="50" required class="form-control" placeholder="Name" aria-describedby="basic-addon1" value="<?php echo $name ?>">
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ include('validation.php'); // Includes Login Script
         <div class="col-lg-12">
           <div class="input-group input-group-lg">
            <!-- <span class="input-group-addon" id="basic-addon1">@</span>-->
-            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" max-length="8" required>
+            <input type='text' name='email' id='email' maxlength="50" required class="form-control" placeholder="E-mail" aria-describedby="basic-addon1" value="<?php echo $email ?>">
           </div>
         </div>
       </div>
@@ -52,15 +52,7 @@ include('validation.php'); // Includes Login Script
         <div class="col-lg-12">
           <div class="input-group input-group-lg">
             <!--<span class="input-group-addon" id="basic-addon1">&</span>-->
-            <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" required>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="input-group input-group-lg">
-            <!--<span class="input-group-addon" id="basic-addon1">&</span>-->
-            <input type="text" class="form-control" placeholder="Confirm password" aria-describedby="basic-addon1" required>
+            <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" required name="pass">
           </div>
         </div>
       </div>
