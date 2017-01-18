@@ -1,5 +1,14 @@
 <?php
 include('login.php'); // Includes Login Script
+ ob_start();
+ session_start();
+ if( isset($_SESSION['user'])!="" ){
+  header("Location: home.php");
+ }
+ include_once 'dbconnect.php';
+
+ $error = false;
+
 ?>
 <!DOCTYPE html>
 <html lang="em">
