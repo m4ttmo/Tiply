@@ -39,40 +39,58 @@ include('register.php'); // Includes Login Script
         <h2>Sign up</h2>
       </div>
     </div>
-    <form method='post' accept-charset='UTF-8' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-        
+
+ <div id="login-form">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+    
+     <div class="col-lg-12">
+            
+            <?php
+   if ( isset($errMSG) ) {
+    
+    ?>
+ 
+             <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
+    <?php echo $errMSG; ?>
+                </div>
+             
+                <?php
+   }
+   ?>
+         <div class="row">
+        <div class="col-lg-12">
+          <div class="input-group input-group-lg">
+            <input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
+                </div>
+                <span class="text-danger"><?php echo $nameError; ?></span>
+          </div>
+        </div>
+      </div>
+         <div class="row">
+        <div class="col-lg-12">
+          <div class="input-group input-group-lg">
+            <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
+                </div>
+                <span class="text-danger"><?php echo $emailError; ?></span>
+          </div>
+        </div>
+         <div class="row">
+        <div class="col-lg-12">
+          <div class="input-group input-group-lg">
+            <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
+                </div>
+                <span class="text-danger"><?php echo $passError; ?></span>
+          </div>
+        </div>
         <div class="row">
-        <div class="col-lg-12">
-          <div class="input-group input-group-lg">
-           <!-- <span class="input-group-addon" id="basic-addon1">@</span>-->
-            <input type='text' name='name' id='name' maxlength="50" required class="form-control" placeholder="Name" aria-describedby="basic-addon1" value="<?php echo $name ?>">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="input-group input-group-lg">
-           <!-- <span class="input-group-addon" id="basic-addon1">@</span>-->
-            <input type='text' name='email' id='email' maxlength="50" required class="form-control" placeholder="E-mail" aria-describedby="basic-addon1" value="<?php echo $email ?>">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="input-group input-group-lg">
-            <!--<span class="input-group-addon" id="basic-addon1">&</span>-->
-            <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" required name="pass">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="btn-group btn-group-lg" role="group" aria-label="...">
-            <button name="submit" type="submit" value="Submit" class="btn btn-default">Continue</button>
+            <div class="col-lg-12">
+                <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                <button type="submit" class="btn btn-default" name="btn-signup">Continue</button>
           </div>
         </div>
       </div>
     </form>
+    </div> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
       window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
@@ -80,3 +98,4 @@ include('register.php'); // Includes Login Script
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
+<?php ob_end_flush(); ?>
