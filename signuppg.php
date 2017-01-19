@@ -69,7 +69,7 @@ include('register.php'); // Includes Login Script
          <div class="row">
         <div class="col-lg-12">
           <div class="input-group input-group-lg">
-            <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
+            <input type="email" name="email" class="form-control" placeholder="E-mail" maxlength="40" value="<?php echo $email ?>" />
                 </div>
                 <span class="text-danger"><?php echo $emailError; ?></span>
           </div>
@@ -77,7 +77,7 @@ include('register.php'); // Includes Login Script
          <div class="row">
         <div class="col-lg-12">
           <div class="input-group input-group-lg">
-            <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
+            <input type="password" name="pass" class="form-control" placeholder="Password" maxlength="15" />
                 </div>
                 <span class="text-danger"><?php echo $passError; ?></span>
           </div>
